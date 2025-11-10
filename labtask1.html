@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .form {
+            width: 100%;
+            max-width: 700px;
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            margin: 0 0 10px;
+            font-size: 1.2em;
+        }
+        .step {
+            text-align: center;
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .red { color: rgb(0, 0, 0); }
+        fieldset {
+            border: 1px solid #999;
+            padding: 12px;
+            margin-bottom: 15px;
+        }
+        legend {
+            font-weight: bold;
+            padding: 0 8px;
+            font-size: 1em;
+        }
+        .row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 7px;
+        }
+        label {
+            width: 140px;
+            font-size: 0.95em;
+            padding-right: 10px;
+            text-align: left;
+        }
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        select {
+            flex: 1;
+            max-width: 220px;
+            padding: 4px;
+            border: 1px solid #000;
+            font-size: 0.95em;
+        }
+        .radio-group {
+            margin-left: 145px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+        .checkbox-group {
+            margin-left: 145px;
+            margin-bottom: 8px;
+        }
+        .checkbox-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.95em;
+        }
+        textarea {
+            width: 100%;
+            max-width: 380px;
+            height: 60px;
+            border: 1px solid #000;
+            padding: 4px;
+            margin-top: 5px;
+            font-size: 0.95em;
+            resize: none;
+        }
+        .recurring {
+            margin-left: 145px;
+            margin-top: 5px;
+            font-size: 0.95em;
+        }
+        .recurring input[type="text"] {
+            width: 60px;
+            margin: 0 5px;
+            padding: 3px;
+            border: 1px solid #000;
+            font-size: 0.95em;
+        }
+        .btn-group {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .btn {
+            padding: 6px 14px;
+            margin: 0 5px;
+            border: 1px solid #000;
+            background: #f0f0f0;
+            font-size: 0.9em;
+            cursor: pointer;
+        }
+        .btn:hover { background: #e0e0e0; }
+        .secure {
+            text-align: center;
+            font-size: 0.8em;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        textarea, input[type="checkbox"] { outline: none; }
+        .checkbox-group label { line-height: 1.4; }
+    </style>
+</head>
+<body>
+
+<div class="form">
+    <h2>Donor Required Information</h2>
+    <div class="step">&gt; 1 Donation <span class="red">&gt;</span> 2 Confirmation <span class="red">&gt;</span> Thank You!</div>
+
+    <form>
+
+        <fieldset>
+            <legend>Donor Information</legend>
+
+            <div class="row"><label>First Name <span class="red">*</span></label><input type="text" required></div>
+            <div class="row"><label>Last Name <span class="red">*</span></label><input type="text" required></div>
+            <div class="row"><label>Company</label><input type="text"></div>
+            <div class="row"><label>Address 1 <span class="red">*</span></label><input type="text" required></div>
+            <div class="row"><label>Address 2</label><input type="text"></div>
+            <div class="row"><label>City <span class="red">*</span></label><input type="text" required></div>
+
+            <div class="row">
+                <label>State</label>
+                <select>
+                    <option>Select a State</option>
+                    <option>Dhaka</option>
+                    <option>Chittagong</option>
+                    <option>Khulna</option>
+                </select>
+            </div>
+
+            <div class="row"><label>Zip Code <span class="red">*</span></label><input type="text" required></div>
+
+            <div class="row">
+                <label>Country</label>
+                <select>
+                    <option>Select a Country</option>
+                    <option>Bangladesh</option>
+                    <option>India</option>
+                </select>
+            </div>
+
+            <div class="row"><label>Phone <span class="red">*</span></label><input type="tel" required></div>
+            <div class="row"><label>Fax</label><input type="tel"></div>
+            <div class="row"><label>Email <span class="red">*</span></label><input type="email" required></div>
+
+            <strong style="margin-left: 145px; display: block; margin: 10px 0 5px;">Donation Amount <span class="red">*</span></strong>
+            <div class="radio-group">
+                <label><input type="radio" name="amount" checked> $500</label>
+                <label><input type="radio" name="amount"> $250</label>
+                <label><input type="radio" name="amount"> $100</label>
+                <label><input type="radio" name="amount"> $50</label>
+                <label><input type="radio" name="amount"> Other</label>
+            </div>
+
+            <div class="recurring">
+                <label><input type="checkbox"> I am interested in giving on a regular basis.</label><br>
+                Monthly Credit Card $<input type="text" size="5"> for <input type="text" size="3"> Months
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend class="red">Honorarium and Memorial Donation Information</legend>
+
+            <div style="margin-bottom: 8px;">
+                <label><input type="radio" name="type"> I would like to make this donation <span class="red">in honor of</span></label><br>
+                <label><input type="radio" name="type"> in memory of</label>
+            </div>
+
+            <div class="row"><label>Name</label><input type="text"></div>
+            <div class="row"><label>Address</label><input type="text"></div>
+            <div class="row"><label>City</label><input type="text"></div>
+            <div class="row"><label>State</label><select><option>Select a State</option><option>Dhaka</option></select></div>
+            <div class="row"><label>Zip</label><input type="text"></div>
+
+            <strong style="margin-left: 145px; display: block; margin: 12px 0 5px;">Acknowledge Donation to</strong>
+            <div class="row"><label>Name</label><input type="text"></div>
+            <div class="row"><label>Address</label><input type="text"></div>
+            <div class="row"><label>City</label><input type="text"></div>
+            <div class="row"><label>State</label><select><option>Select a State</option><option>Dhaka</option></select></div>
+            <div class="row"><label>Zip</label><input type="text"></div>
+        </fieldset>
+        <fieldset>
+            <legend>Additional Information</legend>
+            <p style="margin: 0 0 10px 0; font-size: 0.9em; text-align: left;">
+                Please enter your name, company or organization as you would like it to appear in our publications:
+            </p>
+
+            <div class="checkbox-group">
+                <label><input type="checkbox"> I would like my gift to remain anonymous.</label>
+                <label><input type="checkbox"> My employer offers a matching gift program. I will mail the matching gift form.</label>
+                <label><input type="checkbox"> Please save the cost of acknowledging this gift by not mailing a thank you letter.</label>
+            </div>
+
+            <strong style="display: block; margin: 12px 0 5px;">Comments</strong>
+            <span style="font-size: 0.8em; color: #555;">(Please type any questions or comments here)</span><br>
+            <textarea></textarea>
+
+            <strong style="display: block; margin: 15px 0 5px;">How may we contact you?</strong>
+            <div class="checkbox-group">
+                <label><input type="checkbox"> Email</label>
+                <label><input type="checkbox"> Postal Mail</label>
+                <label><input type="checkbox"> Telephone</label>
+                <label><input type="checkbox"> Fax</label>
+            </div>
+
+            <label style="display: block; margin: 12px 0 5px;"><input type="checkbox"> I would like to receive newsletters about special events by:</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox"> Email</label>
+                <label><input type="checkbox"> Postal Mail</label>
+            </div>
+
+            <label style="display: block; margin: 12px 0;"><input type="checkbox"> I would like information about volunteering with the organization.</label>
+        </fieldset>
+
+        <div class="btn-group">
+            <button type="submit" class="btn">Continue >></button>
+            <button type="reset" class="btn">Reset</button>
+        </div>
+
+        <p class="secure">
+            Donors online with confidence.You are on a secure server.<br>
+            If you have any problems or questions, please contact support.
+        </p>
+
+    </form>
+</div>
+
+</body>
+</html>
